@@ -33,12 +33,10 @@ export const energy_deposit_logic = (creep: Creep): boolean => {
 };
 
 export const pickup_resources_logic = (creep: Creep) => {
-  const targets = creep.room.find(FIND_DROPPED_RESOURCES);
-  if (targets.length < 1) {
+  const target = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
+  if (!target) {
     return;
   }
-
-  const target = creep.memory.role === "upgrader" ? targets[2] : targets[1];
 
   if (creep.pickup(target) === ERR_NOT_IN_RANGE) {
     creep.moveTo(target, { visualizePathStyle: { stroke: constants.colors.light_purple } });
