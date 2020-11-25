@@ -33,10 +33,18 @@ export const energy_deposit_logic = (creep: Creep): boolean => {
 };
 
 export const pickup_resources_logic = (creep: Creep) => {
-  const target = creep.pos.findClosestByRange(FIND_DROPPED_RESOURCES);
-  if (!target) {
+  const targets = creep.room.find(FIND_DROPPED_RESOURCES);
+  if (targets.length < 0) {
     return;
   }
+
+  const eliggibleTargets = targets.filter(target => target.amount > 500);
+
+  if (!eliggibleTargets.length) {
+    return;
+  }
+
+  const target = eliggibleTargets[0];
 
   if (creep.pickup(target) === ERR_NOT_IN_RANGE) {
     creep.moveTo(target, { visualizePathStyle: { stroke: constants.colors.light_purple } });

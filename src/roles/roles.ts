@@ -10,6 +10,6 @@ export interface roleTemplates {
 
 export const roles: roleTemplates = {
   harvester: [WORK, WORK, MOVE],
-  upgrader: [WORK, CARRY, MOVE],
-  builder: [WORK, CARRY, MOVE]
+  upgrader: [WORK, WORK, CARRY, MOVE],
+  builder: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE]
 };

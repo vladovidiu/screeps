@@ -16,8 +16,8 @@ export const loop = ErrorMapper.wrapLoop(() => {
   const spawn = Game.spawns[constants.coreSpawn];
 
   respawn(spawn, "harvester", 3);
-  respawn(spawn, "upgrader", 4);
-  respawn(spawn, "builder", 6);
+  respawn(spawn, "upgrader", 6);
+  respawn(spawn, "builder", 1);
 
   for (const name in Game.creeps) {
     const creep = Game.creeps[name];

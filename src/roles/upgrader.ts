@@ -15,5 +15,6 @@ export const run = (creep: Creep) => {
     }
   } else {
     common.pickup_resources_logic(creep);
+    // common.harvest_logic(creep);
   }
 };
