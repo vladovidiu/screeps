@@ -9,7 +9,7 @@ export interface roleTemplates {
 }
 
 export const roles: roleTemplates = {
-  harvester: [WORK, WORK, MOVE],
+  harvester: [WORK, WORK, WORK, WORK, MOVE],
   upgrader: [WORK, WORK, CARRY, MOVE],
   builder: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE]
 };

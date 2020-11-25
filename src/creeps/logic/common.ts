@@ -38,7 +38,9 @@ export const pickup_resources_logic = (creep: Creep) => {
     return;
   }
 
-  const eliggibleTargets = targets.filter(target => target.amount > 500);
+  const MINIMUM_AMOUNT = creep.memory.role === "builder" ? 650 : 1000;
+
+  const eliggibleTargets = targets.filter(target => target.amount > MINIMUM_AMOUNT);
 
   if (!eliggibleTargets.length) {
     return;
