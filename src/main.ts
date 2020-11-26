@@ -17,7 +17,7 @@ export const loop = ErrorMapper.wrapLoop(() => {
 
   respawn(spawn, "harvester", 4);
   respawn(spawn, "upgrader", 8);
-  respawn(spawn, "builder", 1);
+  respawn(spawn, "builder", 2);
 
   for (const name in Game.creeps) {
     const creep = Game.creeps[name];
